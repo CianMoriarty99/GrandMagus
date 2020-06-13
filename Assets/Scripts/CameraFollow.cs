@@ -12,14 +12,13 @@ public class CameraFollow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerObj = GameObject.FindGameObjectWithTag("Player");
-        playerTransform = playerObj.transform;
+        playerTransform = PlayerController.instance.transform;
     }
 
     
     void LateUpdate()
     {
-        Vector2 offset = playerObj.GetComponent<PlayerController>().movement * cameraDistance;
+        Vector2 offset = PlayerController.instance.GetComponent<PlayerController>().movement * cameraDistance;
         Vector3 temp = transform.position;
 
         temp.x = playerTransform.position.x;

@@ -5,18 +5,15 @@ using UnityEngine;
 public class HighlightTarget : MonoBehaviour
 {
     SpriteRenderer m_SpriteRenderer;
-    GameObject mouseObjectRef;
     MouseManager mouseScriptRef;
-    private string searchString;
 
     private Sprite [] sprites;
     
     // Start is called before the first frame update
     void Start()
     {
-        mouseObjectRef = GameObject.Find("MouseManager");
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
-        mouseScriptRef = mouseObjectRef.GetComponent<MouseManager>();
+        mouseScriptRef = GameObject.Find("MouseManager").GetComponent<MouseManager>();
         sprites = Resources.LoadAll<Sprite>(this.gameObject.name);
 
         
