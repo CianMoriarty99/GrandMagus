@@ -13,6 +13,6 @@ public class SpriteLayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<SpriteRenderer>().sortingOrder = Mathf.RoundToInt(transform.position.y * 100f) * -1;
+        GetComponent<SpriteRenderer>().sortingOrder = Mathf.RoundToInt(transform.position.y * 100f) * -1 + 10000;
     }
 }
